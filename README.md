@@ -77,6 +77,34 @@ You can use the following card numbers to test different scenarios:
 | `99887766` | ℹ️ **Insurance Only** | Active Snowit Insurance, No Skipass |
 | `00000000` | ❌ **Empty** | Valid card number, but no products active |
 
+## Server Deployment (Detached Mode)
+
+On a remote server (like DigitalOcean), you can use `forever` to run the processes in the background.
+
+1.  **Install forever globally**:
+    ```bash
+    npm install -g forever
+    ```
+
+2.  **Start Backend**:
+    ```bash
+    cd backend
+    forever start -c "npm run share" ./
+    ```
+
+3.  **Start Frontend**:
+    ```bash
+    cd ../frontend
+    forever start -c "npm run share" ./
+    ```
+
+4.  **Check Status & URLs**:
+    Use `forever logs` to see the output (including the Tunnel URLs).
+    ```bash
+    forever list
+    forever logs 0  # Adjust index based on list output
+    ```
+
 ## License
 
 Private / Demo Purpose.
