@@ -6,7 +6,7 @@ import cardRoutes from "./routes/cards";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4010;
 
 // Middleware
 app.use(cors());

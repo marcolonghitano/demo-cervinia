@@ -61,7 +61,7 @@ npm run share
 *This starts the Vite dev server and its own tunnel.*
 
 ### 3. Accessing the App
--   **Local**: `http://localhost:5173`
+-   **Local**: `http://localhost:4011`
 -   **Mobile**: check the terminal output of the Frontend command for the `https://....loca.lt` URL.
 
 ## Test Data (Mock)

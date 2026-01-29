@@ -27,8 +27,9 @@ yarn-error.log*
 *.swo
 
 # Tunneling
-/backend/scripts/update-tunnel.js 
-# ^ Keep script if you want it in repo, BUT usually dev tools are fine in repo. 
+# /backend/scripts/update-tunnel.js 
+# (Commented out to include the script in the repo)
+
 # User asked for "setup repo... what serves to start". 
 # The script is part of the "npm run share" workflow, so it SHOULD be in the repo.
 # However, .env.local MUST be ignored.

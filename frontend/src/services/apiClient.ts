@@ -14,7 +14,7 @@ export interface CardStatus {
     errors: string[];
 }
 
-const API_BASE_URL = (import.meta.env.VITE_API_URL || "http://localhost:3001/api").replace(/\/$/, "") + (import.meta.env.VITE_API_URL?.endsWith("/api") ? "" : "/api");
+const API_BASE_URL: string = (import.meta.env.VITE_API_URL || "http://localhost:4010/api").replace(/\/$/, "") + (import.meta.env.VITE_API_URL?.endsWith("/api") ? "" : "/api");
 
 export const fetchCardStatus = async (cardNumber: string): Promise<CardStatus> => {
     const response = await fetch(`${API_BASE_URL}/cards/${cardNumber}`, {

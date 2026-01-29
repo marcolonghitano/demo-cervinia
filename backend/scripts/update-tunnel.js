@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const FRONTEND_ENV_PATH = path.join(__dirname, '../../frontend/.env.local');
-const PORT = 3001;
+const PORT = 4010;
 
 console.log('Starting localtunnel...');
 

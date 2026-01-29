@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4011",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "tunnel": "npx -y localtunnel --port 5173",
+    "tunnel": "npx -y localtunnel --port 4011",
     "share": "npx -y concurrently \"npm run dev\" \"npm run tunnel\""
   },
   "dependencies": {
