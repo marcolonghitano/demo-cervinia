@@ -6,5 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true, // Needed for tunnel
+    // @ts-ignore
+    allowedHosts: 'all',
   },
 })
