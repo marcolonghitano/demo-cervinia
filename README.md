@@ -77,33 +77,43 @@ You can use the following card numbers to test different scenarios:
 | `99887766` | ℹ️ **Insurance Only** | Active Snowit Insurance, No Skipass |
 | `00000000` | ❌ **Empty** | Valid card number, but no products active |
 
-## Server Deployment (Detached Mode)
+## Server Deployment (Without Tunnel)
 
-On a remote server (like DigitalOcean), you can use `forever` to run the processes in the background.
+If deploying on a public server (like DigitalOcean), you don't need localtunnel. Use `forever` to run processes in the background:
 
 1.  **Install forever globally**:
     ```bash
     npm install -g forever
     ```
 
-2.  **Start Backend**:
+2.  **Configure Frontend Environment** (on the server):
+    Create/edit `frontend/.env.local`:
+    ```bash
+    VITE_API_URL=http://YOUR_SERVER_IP:4010/api
+    # Example: VITE_API_URL=http://138.197.186.140:4010/api
+    ```
+
+3.  **Start Backend**:
     ```bash
     cd backend
-    forever start -c "npm run share" ./
+    forever start -c "npm run dev:server" ./
     ```
 
-3.  **Start Frontend**:
+4.  **Start Frontend**:
     ```bash
     cd ../frontend
-    forever start -c "npm run share" ./
+    forever start -c "npm run dev:server" ./
     ```
 
-4.  **Check Status & URLs**:
-    Use `forever logs` to see the output (including the Tunnel URLs).
+5.  **Check Status**:
     ```bash
     forever list
-    forever logs 0  # Adjust index based on list output
+    forever logs 0  # Check output of first process
     ```
+
+6.  **Access the App**:
+    -   Frontend: `http://YOUR_SERVER_IP:4011`
+    -   Backend API: `http://YOUR_SERVER_IP:4010/api`
 
 ## License
 

@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "dev:server": "npm run dev",
     "tunnel": "npx -y localtunnel --port 4011",
     "share": "npx -y concurrently \"npm run dev\" \"npm run tunnel\""
   },
